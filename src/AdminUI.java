@@ -70,7 +70,15 @@ public class AdminUI extends javax.swing.JFrame {
             new String [] {
                 "Users", "Usage Limit", "Zone"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         btnLogOut.setText("Log Out");
